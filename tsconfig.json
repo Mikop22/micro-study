@@ -1,0 +1,17 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": ""
+    },
+    {
+      "path": ""
+    }
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}
