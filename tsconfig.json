@@ -1,17 +1,20 @@
 {
-  "files": [],
-  "references": [
-    {
-      "path": ""
-    },
-    {
-      "path": ""
-    }
-  ],
   "compilerOptions": {
+    "composite": true,
+    "target": "ES2022", // Supports top-level await
+    "module": "ESNext", // Required for modern JavaScript features
+    "moduleResolution": "node",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"] // Matches the alias in Vite config
     }
-  }
+  },
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
 }

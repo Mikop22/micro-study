@@ -1,4 +1,4 @@
-import React from 'react';
+
 import ExamScheduleForm from './components/ExamScheduleForm';
 import './App.css';
 function App() {

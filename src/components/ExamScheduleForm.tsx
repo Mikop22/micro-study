@@ -52,8 +52,7 @@ const ExamScheduleForm = () => {
     exercise: { does: false },
     meals: { breakfast: '', lunch: '', dinner: '' },
     otherCommitments: ''
-  });
-  const [generatedSchedule, setGeneratedSchedule] = useState<any>(null);
+  })
   // Convert file to base64
   const fileToBase64 = (file: File): Promise<string> => {
     return new Promise((resolve, reject) => {
@@ -106,7 +105,7 @@ const ExamScheduleForm = () => {
       // Now parse the cleaned text as JSON
       const parsedSchedule = JSON.parse(cleanedText);
       // Initialize confidence levels for each exam subject
-      const initialConfidenceLevels = parsedSchedule.exams.reduce((acc, exam) => {
+      const initialConfidenceLevels = parsedSchedule.exams.reduce((acc: { [x: string]: string; }, exam: { subject: string | number; }) => {
         acc[exam.subject] = "medium";
         return acc;
       }, {});
@@ -200,7 +199,7 @@ const ExamScheduleForm = () => {
         <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
           <h2 className="text-xl font-medium text-gray-800 mb-4">Exam Schedule and Confidence Assessment</h2>
           <div className="space-y-4">
-            {examSchedule.exams.map((exam, index) => (
+            {examSchedule.exams.map((exam: { subject: string , date: string , time: string , duration: string }, index: number) => (
               <div key={index} className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
                 <div>
                   <h3 className="font-medium text-gray-800">{exam.subject}</h3>
