@@ -6,7 +6,7 @@ const date = new Date(2024,12,1);
 const coordinates = new Coordinates(35.7897507, -78.6912485);
 const prayerTimes = new PrayerTimes(coordinates,date, params);
 const { GoogleGenerativeAI } = await import("@google/generative-ai");
-const genAI = new GoogleGenerativeAI("AIzaSyDp-s_QCrViCaucgvWzsk9BZYmW9PwF6A8");
+const genAI = new GoogleGenerativeAI(""); //your gemini api key
 const generationConfig = {
   temperature: 1,
   topP: 0.95,
